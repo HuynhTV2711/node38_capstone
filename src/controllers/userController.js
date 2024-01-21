@@ -29,9 +29,9 @@ const userController = async (req, res)=>{
             },
             data: newData
         })
-       res.send("update thanhd công")
+       res.send("update thành công")
     } catch (error) {
-        res.send("Lỗi")
+        res.send("Update lỗi vui lòng kiểm tra dữ liệu")
     }
 }
 

@@ -7,7 +7,7 @@ const getImg = async (req, res)=>{
       let data = await prisma.hinh_anh.findMany();
       res.send(data);
     } catch (error) {
-      res.send("Looix")
+      res.send(error)
     }
   }
 const getImgByIdUser = async (req, res)=>{
@@ -31,7 +31,7 @@ const getImgByIdUser = async (req, res)=>{
     })
     res.send(data)
   } catch (error) {
-    res.send("Looix")
+    res.send(error)
   }
 }
 
@@ -48,7 +48,7 @@ const checkSave = async (req, res)=>{
       res.send("Hình ảnh đã được lưu")
     }
   } catch (error) {
-    res.send("Looix")
+    res.send(error)
   }
 }
   export{

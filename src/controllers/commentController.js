@@ -13,7 +13,7 @@ const getCommentByIdImg = async (req, res)=>{
         })
         res.send(data)
     } catch (error) {
-        res.send("Looix")
+        res.send(error)
     }
 }
 
@@ -38,7 +38,7 @@ const createComment = async (req, res)=>{
         })
         res.send("Bình luận thành công")
     } catch (error) {
-        res.send("Lỗi")
+        res.send(error)
     }
 }
 
