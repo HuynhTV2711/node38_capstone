@@ -52,9 +52,25 @@ const checkSave = async (req, res)=>{
   }
 }
 
+const getlistImgbyName= async (req, res) => {
+  try {
+      const { Name } = req.params;
+    
+      let data = await prisma.hinh_anh.findMany({
+          where: {
+              ten_hinh: Name
+          }
+      });
+      res.send(data);
+  } catch (error) {
+      res.send(error)
+  }
+}
 
   export{
     getImg,
     getImgByIdUser,
-    checkSave
+    checkSave,
+    getlistImgbyName,
+
   }
