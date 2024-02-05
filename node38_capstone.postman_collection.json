@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "76c7084e-d4b3-4cb3-bbca-1ab385e3da9e",
+		"name": "node38_capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Đăng nhập",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abcminh@gmail.com\",\r\n    \"mat_khau\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Đăng ký",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"abch@gmail.com\",\r\n        \"mat_khau\" : \"123\",\r\n        \"ho_ten\" : \"Ho Ten\",\r\n        \"tuoi\" : 18,\r\n        \"anh_dai_dien\": \"anh1.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy thông tin ảnh và người tạo ảnh bằng id ảnh",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjExLCJlbWFpbCI6ImFiY21pbmhAZ21haWwuY29tIn0sImlhdCI6MTcwNzExNDg3MiwiZXhwIjoxNzM4NjcyNDcyfQ.vaUNnrzE0xWZQozlgJ5LtabFPLOLDfHhpMy8YIjf_3A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/img/get-img/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"img",
+						"get-img",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách bình luận theo id hình",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/comment/get-comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment",
+						"get-comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kiểm tra hình đã lưu chưa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/img/check-save/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"img",
+						"check-save",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thêm bình luận",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjExLCJlbWFpbCI6ImFiY21pbmhAZ21haWwuY29tIn0sImlhdCI6MTcwNzExNDg3MiwiZXhwIjoxNzM4NjcyNDcyfQ.vaUNnrzE0xWZQozlgJ5LtabFPLOLDfHhpMy8YIjf_3A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\": 5,\r\n    \"ngay_binh_luan\":\"2024-01-18T00:00:00.000Z\",\r\n    \"noi_dung\":\"Ôi chội ôi!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comment/create-comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comment",
+						"create-comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjExLCJlbWFpbCI6ImFiY21pbmhAZ21haWwuY29tIn0sImlhdCI6MTcwNzExNDUwNiwiZXhwIjoxNzM4NjcyMTA2fQ.gT0slsKlcKTe1Zk_EcqqIn8D4Yn20F_1eEoCteEHwsU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n            \"email\": \"abcminh@gmail.com\",\r\n            \"mat_khau\": \"123\",\r\n            \"ho_ten\": \"Tran Van Huynh\",\r\n            \"tuoi\": 32, \r\n            \"anh_dai_dien\": \"avatar.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/edit-user/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"edit-user",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "laydanhsachhinh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/img/get-img",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"img",
+						"get-img"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tìm danh sách ảnh theo tên",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/img/get-list-img/git",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"img",
+						"get-list-img",
+						"git"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tìm danh sách theoUseridSave",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjEyLCJlbWFpbCI6InVzZXIxMUBleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDYzNDk1NDgsImV4cCI6MTczNzkwNzE0OH0.babcskOdg6uHYOagSk-BUiT6MPvfe_M4VSc7cVCPzwg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/imgManage/getlistbyUseridSave/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"getlistbyUseridSave",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lấy danh sách theo Userid tạo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjEyLCJlbWFpbCI6InVzZXIxMUBleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDYzNDk1NDgsImV4cCI6MTczNzkwNzE0OH0.babcskOdg6uHYOagSk-BUiT6MPvfe_M4VSc7cVCPzwg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/imgManage/getlistbyUseridCreate/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"getlistbyUseridCreate",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "xóa hinh",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjEyLCJlbWFpbCI6InVzZXIxMUBleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDYzNDk1NDgsImV4cCI6MTczNzkwNzE0OH0.babcskOdg6uHYOagSk-BUiT6MPvfe_M4VSc7cVCPzwg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/imgManage/deleteimgbyId/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"deleteimgbyId",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tạothêm1hình",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjExLCJlbWFpbCI6ImFiY21pbmhAZ21haWwuY29tIn0sImlhdCI6MTcwNzExODI0NCwiZXhwIjoxNzM4Njc1ODQ0fQ.AGzQrLV43xXnFkEBgIYzkUtbUKBFTQyZeqFHf8uzu7s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Huynh/Downloads/spiderman.jpg"
+						},
+						{
+							"key": "ten_hinh",
+							"value": "git",
+							"type": "text"
+						},
+						{
+							"key": "mo_ta",
+							"value": "nice git image",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/imgManage/create-img/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"create-img",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get -user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5ndW9pX2R1bmdfaWQiOjExLCJlbWFpbCI6ImFiY21pbmhAZ21haWwuY29tIn0sImlhdCI6MTcwNzExODI0NCwiZXhwIjoxNzM4Njc1ODQ0fQ.AGzQrLV43xXnFkEBgIYzkUtbUKBFTQyZeqFHf8uzu7s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/imgManage/get-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"imgManage",
+						"get-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
